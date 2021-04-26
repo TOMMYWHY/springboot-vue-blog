@@ -1,3 +1,7 @@
+# springboot - vue - blog
+
+
+
 https://www.bilibili.com/video/BV1PQ4y1P7hZ/?p=2&spm_id_from=pageDriver
 
 
@@ -10,6 +14,6 @@ db: vueblog
 
 2. api 返回结果统一
 
-3. shiro
-
+3. shiro-redis
+    - 启动redis
 4. jwt

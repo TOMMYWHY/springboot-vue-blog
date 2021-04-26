@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  *  前端控制器
  * </p>
  *
- * @author 关注公众号：MarkerHub
+ * @author tommywhy
  * @since 2021-04-26
  */
 @RestController
