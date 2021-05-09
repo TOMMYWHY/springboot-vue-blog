@@ -46,11 +46,16 @@ public class JwtFilter extends AuthenticatingFilter {
         if(StringUtils.isNotEmpty(jwt)){
             return true;
         }else {
+            /*校验jwt*/
             Claims claimByToken = jwtUtils.getClaimByToken(jwt);
              if(claimByToken == null || jwtUtils.isTokenExpired(claimByToken.getExpiration()) ){
-                 throw new ExpiredCredentialsException("token expired, login again");
+                 throw new ExpiredCredentialsException(">>>>token expired, login again");
              }
-            return  executeLogin(servletRequest,servletResponse);
+
+//            if(claimByToken == null  ){
+//                throw new ExpiredCredentialsException(">>>>token expired, login again");
+//            }
+            return  executeLogin(servletRequest,servletResponse); // 登录
         }
 
     }

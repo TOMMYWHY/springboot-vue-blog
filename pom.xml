@@ -44,7 +44,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!--mp-->
+        <!--mybatis plus-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>

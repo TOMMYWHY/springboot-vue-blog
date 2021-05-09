@@ -106,7 +106,7 @@ public class CodeGenerator {
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
-        strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
+        strategy.setInclude(scanner("db tableName，").split(","));
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix("m_");
         mpg.setStrategy(strategy);

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableTransactionManagement
+@EnableTransactionManagement //事务
 @MapperScan("com.tommy.why.mapper")
 public class MybatisPlusConfig {
     @Bean
