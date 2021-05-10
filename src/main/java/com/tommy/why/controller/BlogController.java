@@ -48,21 +48,21 @@ public class BlogController {
     }
 
     /* create and edit */
-//    @RequiresAuthentication
+    @RequiresAuthentication
     @PostMapping("/blog/edit")
     public Result list(@Validated @RequestBody Blog blog){
         Blog temp = null;
         if(blog.getId() != null){
             temp = blogService.getById(blog.getId());
             /* 权限*/
-            Assert.isTrue(temp.getUserId()== ShiroUtil.getProfile().getId(),"No permission to edit"); //
+            Assert.isTrue(temp.getUserId().longValue()== ShiroUtil.getProfile().getId().longValue(),"No permission to edit"); //
         }else{
             temp = new Blog();
             temp.setUserId(ShiroUtil.getProfile().getId());
             temp.setCreated(LocalDateTime.now());
             temp.setStatus(0);
         }
-        BeanUtil.copyProperties(blog,temp,"id","userId","created","status");
+        BeanUtil.copyProperties(blog,temp,"id","userId","created", "status");
         blogService.saveOrUpdate(temp);
         return Result.succ(temp);
     }
