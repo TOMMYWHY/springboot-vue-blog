@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  * <p>
  * 
@@ -28,10 +30,13 @@ public class Blog implements Serializable {
 
     private Long userId;
 
+    @NotBlank(message="title cannot empty~!")
     private String title;
 
+    @NotBlank(message="description cannot empty~!")
     private String description;
 
+    @NotBlank(message="content cannot empty~!")
     private String content;
 
     private LocalDateTime created;

@@ -31,9 +31,12 @@ public class JwtFilter extends AuthenticatingFilter {
     @Override
     protected AuthenticationToken createToken(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
 
+//        HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         String jwt = request.getHeader("Authorization");
-        if(StringUtils.isNotEmpty(jwt)){
+//        String jwt = request.getHeader("Authorization");
+
+        if(StringUtils.isEmpty(jwt)){
             return null;
         }
 
